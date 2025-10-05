@@ -10,14 +10,19 @@ function VerifyOtp({ email, onVerified }) {
 
     setLoading(true);
     try {
-      const res = await fetch("https://talrn-assessment-backend-shalini.onrender.com/api/verify-otp", {
+      const res = await fetch("https://talrn-express-backend.onrender.com/api/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),
       });
+
       const data = await res.json();
-      if (res.ok) onVerified();
-      else alert(data.message);
+
+      if (res.ok) {
+        onVerified();
+      } else {
+        alert(data.message);
+      }
     } catch (err) {
       alert("Error verifying OTP: " + err.message);
     }
