@@ -25,11 +25,14 @@ function Join({ onNext }) {
 
     setLoading(true);
     try {
-      const res = await fetch("https://talrn-assessment-backend-shalini.onrender.com/api/send-otp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: form.email }),
-      });
+      const res = await fetch(
+        "https://talrn-assessment-backend-shalini.onrender.com/api/send-otp",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: form.email }),
+        }
+      );
       const data = await res.json();
       alert(data.message);
       onNext(form.email);
