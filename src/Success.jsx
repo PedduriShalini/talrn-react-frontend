@@ -10,6 +10,7 @@ function Success() {
         flexDirection: "column",
       }}
     >
+      
       <div
         style={{
           backgroundColor: "white",

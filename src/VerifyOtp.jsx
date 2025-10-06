@@ -5,6 +5,7 @@ function VerifyOtp({ email, onVerified }) {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
     if (!otp) return alert("Enter OTP");
 
